@@ -1,3 +1,3 @@
 # cmizedMesosUI
 
-/usr/share/mesos/webui/<ThisUI>
+/usr/share/mesos/webui/\<ThisUI\>
