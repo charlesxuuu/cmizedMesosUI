@@ -78,14 +78,14 @@
     <script type="text/ng-template" id="template/dialog/masterGone.html">
       <div class="modal-header">
         <h4 class="modal-title">
-          Failed to connect to {{rootScope.$location.host()}}:{{rootScope.$location.port()}}!
+          连接失败 {{rootScope.$location.host()}}:{{rootScope.$location.port()}}!
         </h4>
       </div>
       <div class="modal-body">
-          Retrying in <b>{{rootScope.retry / 1000}}</b> seconds...
+          将于 <b>{{rootScope.retry / 1000}}</b> 秒后重试...
       </div>
       <div class="modal-footer">
-        <button class="btn btn-default" ng-click="$close()">Try now</button>
+        <button class="btn btn-default" ng-click="$close()">立即重试</button>
       </div>
     </script>
 
