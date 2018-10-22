@@ -108,6 +108,7 @@ time:hover {
   padding-left: 4px;
   padding-right: 4px;
   text-shadow: none;
+  background-color: #2C3E50;
 }
 
 a.badge-type:hover {
