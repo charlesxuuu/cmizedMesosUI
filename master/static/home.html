@@ -9,131 +9,131 @@
   <div class="col-sm-5 col-md-4 col-lg-3">
     <div class="well">
       <dl class="inline inline-toggle clearfix">
-        <dt>Cluster:</dt>
+        <dt>集群:</dt>
         <dd>
           <span ng-show="clusterNamed">{{state.cluster}}</span>
           <span ng-show="!clusterNamed">
-            (Unnamed)
+            (未命名集群)
             <i class="icon-info-sign"
               tooltip="To name this cluster, set the --cluster flag when starting the master."
               tooltip-placement="right"></i>
           </span>
         </dd>
-        <dt>Server:</dt>
+        <dt>服务器及接口:</dt>
         <dd>{{state.pid.split("@")[1]}}</dd>
-        <dt>Version:</dt>
+        <dt>版本:</dt>
         <dd>{{state.version}}</dd>
-        <dt>Built:</dt>
+        <dt>构建时间和用户:</dt>
         <dd>
           <m-timestamp value="{{state.build_time * 1000}}">
             by <i>{{state.build_user}}</i>
           </m-timestamp>
         </dd>
-        <dt>Started:</dt>
+        <dt>启动时间:</dt>
         <dd>
           <m-timestamp value="{{state.start_time * 1000}}"></m-timestamp>
         </dd>
-        <dt>Elected:</dt>
+        <dt>选举时间:</dt>
         <dd>
           <m-timestamp value="{{state.elected_time * 1000}}"></m-timestamp>
         </dd>
       </dl>
 
-      <p><a href="" ng-click="log($event)">LOG</a></p>
+      <p><a href="" ng-click="log($event)">日志</a></p>
 
-      <h4>Agents</h4>
+      <h4>代理节点</h4>
       <table class="table table-condensed">
         <tbody>
           <tr>
-            <td>Activated</td>
+            <td>已激活</td>
             <td class="text-right">{{activated_agents | number}}</td>
           </tr>
           <tr>
-            <td>Deactivated</td>
+            <td>已停用</td>
             <td class="text-right">{{deactivated_agents | number}}</td>
           </tr>
         </tbody>
       </table>
 
-      <h4>Tasks</h4>
+      <h4>任务</h4>
       <table class="table table-condensed">
 
         <tbody>
           <tr>
-            <td>Staging</td>
+            <td>正在安排</td>
             <td class="text-right">{{staging_tasks | number}}</td>
           </tr>
           <tr>
-            <td>Starting</td>
+            <td>正在启动</td>
             <td class="text-right">{{starting_tasks | number}}</td>
           </tr>
           <tr>
-            <td>Running</td>
+            <td>正在执行</td>
             <td class="text-right">{{running_tasks | number}}</td>
           </tr>
           <tr>
-            <td>Killing</td>
+            <td>正在终止</td>
             <td class="text-right">{{killing_tasks | number}}</td>
           </tr>
           <tr>
-            <td>Finished</td>
+            <td>已完成任务</td>
             <td class="text-right">{{finished_tasks | number}}</td>
           </tr>
           <tr>
-            <td>Killed</td>
+            <td>已终止任务</td>
             <td class="text-right">{{killed_tasks | number}}</td>
           </tr>
           <tr>
-            <td>Failed</td>
+            <td>失败任务</td>
             <td class="text-right">{{failed_tasks | number}}</td>
           </tr>
           <tr>
-            <td>Lost</td>
+            <td>丢失任务</td>
             <td class="text-right">{{lost_tasks | number}}</td>
           </tr>
           <tr>
-            <td>Orphan</td>
+            <td>孤立任务</td>
              <!-- TODO(janisz) Use metrics when MESOS-5648 gets resolved -->
             <td class="text-right">{{orphan_tasks.length | number}}</td>
           </tr>
         </tbody>
       </table>
 
-      <h4>Resources</h4>
+      <h4>资源池</h4>
       <table class="table table-condensed">
         <thead>
           <tr>
             <td></td>
             <td class="text-right">CPUs</td>
             <td class="text-right">GPUs</td>
-            <td class="text-right">Mem</td>
-            <td class="text-right">Disk</td>
+            <td class="text-right">内存空间</td>
+            <td class="text-right">硬盘空间</td>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Total</td>
+            <td>总量</td>
             <td class="text-right">{{total_cpus | decimalFloat}}</td>
             <td class="text-right">{{total_gpus | decimalFloat}}</td>
             <td class="text-right">{{total_mem * (1024 * 1024) | dataSize}}</td>
             <td class="text-right">{{total_disk * (1024 * 1024) | dataSize}}</td>
           </tr>
           <tr>
-            <td>Used</td>
+            <td>已使用</td>
             <td class="text-right">{{used_cpus | decimalFloat}}</td>
             <td class="text-right">{{used_gpus | decimalFloat}}</td>
             <td class="text-right">{{used_mem * (1024 * 1024) | dataSize}}</td>
             <td class="text-right">{{used_disk * (1024 * 1024) | dataSize}}</td>
           </tr>
           <tr>
-            <td>Offered</td>
+            <td>已提供</td>
             <td class="text-right">{{offered_cpus | decimalFloat}}</td>
             <td class="text-right">{{offered_gpus | decimalFloat}}</td>
             <td class="text-right">{{offered_mem * (1024 * 1024) | dataSize}}</td>
             <td class="text-right">{{offered_disk * (1024 * 1024) | dataSize}}</td>
           </tr>
           <tr>
-            <td>Idle</td>
+            <td>闲置</td>
             <td class="text-right">{{idle_cpus | decimalFloat}}</td>
             <td class="text-right">{{idle_gpus | decimalFloat}}</td>
             <td class="text-right">{{idle_mem * (1024 * 1024) | dataSize}}</td>
