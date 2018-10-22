@@ -21,6 +21,7 @@
 body {
   /* Add space for fixed position navbar. */
   padding-top: 60px;
+  color: #2C3E50;
 }
 
 @media (max-width: 979px) {
